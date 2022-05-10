@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        darkMode: 'class'
+    }
+  </script>
+</head>
+<body>
+  <div class="h-screen bg-slate-200 flex items-center justify-center">
+    <div class="relative">
+        <input type="checkbox" class="toggle opacity-0 absolute top-0 left-0 w-full h-full z-10">
+        <div class="py-3 px-6 bg-white dark:bg-[#112B3C] border border-black rounded-full relative">
+            <img src="/asset/sun.webp" class="icon w-[30px] absolute bg-white dark:bg-[#112B3C] rounded-full p-1 border border-black dark:border-white -left-2 top-0 bottom-0 my-auto transition-all duration-500" alt="">
+        </div>
+    </div>
+  </div>
+
+  <script>
+    const icon = document.querySelector('.icon')
+    document.querySelector('.toggle').addEventListener('click', (e) => {
+        if (e.target.checked) {
+            icon.classList.remove('-left-2')
+            icon.classList.add('left-7')
+            icon.src = '/asset/crescent-moon.webp'
+        }else {
+            icon.classList.remove('left-7')
+            icon.classList.add('-left-2')
+            icon.src = '/asset/sun.webp'
+        }
+    })
+  </script>
+</body>
+</html>
